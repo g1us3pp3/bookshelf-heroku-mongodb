@@ -1,0 +1,28 @@
+<section id="assets" class="sections sections-narrow" data-ng-controller="AssetController">
+  <div class="container">
+    <a class="btn btn-primary pull-right" href="#" data-ui-sref="assets">See All Assets <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+    <h2 class="sub-header">Assets</h2>
+    <div class="row thumbnail-wrapper">
+      <div class="col-md-3" data-ng-repeat="asset in assets | limitTo : 8">
+        <div class="thumbnail">
+          <a data-ui-sref="assetDetails({id: asset.id})"></a>
+          <div class="caption">
+            <h3 class="caption-heading"><a data-ui-sref="assetDetails({id: asset.id})" data-ng-bind="asset.Description"></a></h3>
+          </div>
+          <div class="action-bar">
+            <ul>
+              <!--  
+              <li>
+                <a data-ui-sref="assetDetails({id: asset.id})"><img data-ng-src="images/pets/pet{{owner.id}}.jpg"  class="img-circle img-circle-small" alt="Generic placeholder image" height="30" width="30"></a>
+              </li>
+              
+              <li>
+                <a data-ui-sref="assetDetails({id: asset.id})" class="btn-add-pet"><span class="glyphicon glyphicon-plus"></span></a>
+              </li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
