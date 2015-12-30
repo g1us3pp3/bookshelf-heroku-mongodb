@@ -11,7 +11,7 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <h1 class="sub-header">Edit Asset</h1>
-              <em class="text-muted">Fill up pet owners basic information and contact details</em>
+              <em class="text-muted">Fill assets basic information and contact details</em>
             </div>
           </div>
         </div>
@@ -26,13 +26,14 @@
               </div>
               <div class="form-group">
                 <label for="lastName">Description</label>
-                <input type="text" class="form-control" id="lastName" ng-model="currentAsset.description">
+                <input type="text" class="form-control" id="Description" ng-model="currentAsset.description">
               </div>
             </div>
 
             <div class="col-md-8 col-md-offset-2">
               <div class="form-group form-group-action">
-                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#editAssetSuccessModal" data-dismiss="modal" aria-label="Close" ng-click="saveOwner()">Update Owner</button>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#editAssetSuccessModal" 
+                data-dismiss="modal" aria-label="Close" ng-click="saveAsset()">Update Asset</button>
                 <button class="btn btn-link" class="close" data-dismiss="modal" aria-label="Close">Cancel</button>
               </div>
             </div>
@@ -44,7 +45,7 @@
 </div>
 -->
 <!-- Edit Owner Success Modal -->
-<div class="modal modal-owner fade" id="editAssetSuccessModal" tabindex="-1">
+<div class="modal modal-asset fade" id="editAssetSuccessModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -65,7 +66,7 @@
                 Well done! You've successfully updated an asset.
               </div>
               <div class="form-group form-group-action">
-                <a href="owner_details.html" class="btn btn-primary">View asset details</a>
+                <a href="asset_details.html" class="btn btn-primary">View asset details</a>
                 <button class="btn btn-link" data-dismiss="modal" aria-label="Close">Close</button>
               </div>
             </div>

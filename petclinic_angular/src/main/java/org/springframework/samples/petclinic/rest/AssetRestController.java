@@ -17,6 +17,7 @@ package org.springframework.samples.petclinic.rest;
 
 import java.util.Collection;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -59,6 +61,35 @@ public class AssetRestController {
         return pet;
     }
 	*/
+    @RequestMapping(value = "/assets", method = RequestMethod.POST)
+    public @ResponseBody Asset create(@RequestBody Asset asset) {
+    	if (asset.getId()!=null && asset.getId()>0){
+    		Asset existingAsset = clinicService.findAssetById(asset.getId());
+    		BeanUtils.copyProperties(asset, existingAsset, "pets", "id");
+    		clinicService.saveAsset(existingAsset);
+    	}
+    	else {
+    		this.clinicService.saveAsset(asset);
+    	}
+    	
+    	return asset;
+    }
+    
+    @RequestMapping(value = "/assets", method = RequestMethod.PUT)
+    public @ResponseBody Collection<Asset> create(@RequestBody Collection<Asset> assets) {
+    	for(Asset asset : assets) {
+    		this.clinicService.saveAsset(asset);
+    	}
+    	
+    	return assets;
+    }
+    
+    
+    @RequestMapping(value = "/assets/{id}", method = RequestMethod.GET)
+    public @ResponseBody Asset find(@PathVariable Integer id) {
+        return this.clinicService.findAssetById(id);
+    }
+    
     @RequestMapping(value = "/assets", method = RequestMethod.GET)
     public Collection<Asset> findAllAssets() {
     	return this.clinicService.findAssets();	
