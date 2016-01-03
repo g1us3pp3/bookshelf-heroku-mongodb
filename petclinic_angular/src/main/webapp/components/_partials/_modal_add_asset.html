@@ -1,5 +1,79 @@
 <!-- This partial include Add/Edit Assets and Success Modals -->
 
+<!-- Add Asset Modal -->
+<div class="modal modal-asset fade" id="addAssetModal" tabindex="-1" data-ng-controller="AddAssetController">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h1 class="sub-header">Add An asset</h1>
+              <em class="text-muted">Fill up asset basic information and contact details</em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+              <div class="form-group">
+                <label for="firstName">Name</label>
+                <input type="text" class="form-control" id="Name" ng-model="asset.name">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Description</label>
+                <input type="text" class="form-control" id="Description" ng-model="asset.description">
+              </div>
+              
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group form-group-action">
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addAssetSuccessModal" data-dismiss="modal" aria-label="Close" data-ng-click="addAsset()">Add Asset</button>
+                <button class="btn btn-link" class="close" data-dismiss="modal" aria-label="Close">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Asset Success Modal -->
+<div class="modal modal-asset fade" id="addAssetSuccessModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h1 class="sub-header">Asset added successfully!</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="alert alert-success" role="alert">
+                Well done! You've successfully added an a new asset.
+              </div>
+              <div class="form-group form-group-action">
+                <!-- ##TODO: Should link to the proper  details page -->
+                <a href="asset_details.html" class="btn btn-primary">View asset's details</a>
+                <button class="btn btn-link" data-dismiss="modal" aria-label="Close">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Edit Asset Modal -->
 <div class="modal modal-asset fade" id="editAssetModal" tabindex="-1">
@@ -29,7 +103,6 @@
                 <input type="text" class="form-control" id="Description" ng-model="currentAsset.description">
               </div>
             </div>
-
             <div class="col-md-8 col-md-offset-2">
               <div class="form-group form-group-action">
                 <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#editAssetSuccessModal" 
@@ -44,7 +117,7 @@
   </div>
 </div>
 -->
-<!-- Edit Owner Success Modal -->
+<!-- Edit Asset Success Modal -->
 <div class="modal modal-asset fade" id="editAssetSuccessModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">

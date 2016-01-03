@@ -15,12 +15,15 @@
           <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a>
         </div>
       </div>
+      <button class="btn btn-primary pull-right action-item" data-toggle="modal" data-target="#addAssetModal" data-ng-click="addAsset()">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add New Asset
+      </button>
     </div>
     <h2 class="sub-header">Assets</h2>
     <div class="row">
       <div class="col-md-3" data-ng-repeat="asset in assets">
         <div class="thumbnail">
-          <a data-ui-sref="assetDetails({id: asset.id})"><img class="img-circle" data-ng-src="images/assets/owner{{asset.id}}.jpg" alt="{{asset.Description}}"></img></a>
+          <a data-ui-sref="assetDetails({id: asset.id})"><img class="img-circle" data-ng-src="images/assets/asset{{asset.id}}.jpg" alt="{{asset.Description}}"></img></a>
           <div class="caption">
             <h3 class="caption-heading"><a href="show.html" data-ng-bind="asset.Description"></a></h3>
             <!--  <p data-ng-bind="owner.city"></p>-->            
@@ -30,3 +33,6 @@
     </div>
   </div>
 </section>
+
+<!-- Add Asset modals -->
+<data-ng-include src="'components/_partials/_modal_add_asset.html'"></data-ng-include>

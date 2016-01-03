@@ -44,7 +44,7 @@ var AddAssetController = ['$scope','Asset', function($scope,Asset) {
 
 	$scope.asset={id:0,assets:[]};
 
-	$scope.addAssets = function(){
+	$scope.addAsset = function(){
 		Asset.save($scope.asset);
 	}
 }];
