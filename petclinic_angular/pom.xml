@@ -6,7 +6,6 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<name>petclinic</name>
-	<packaging>war</packaging>
 
 	<properties>
 
@@ -411,6 +410,7 @@
 					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>
+			<!--  
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -420,7 +420,7 @@
 						<include>**/*Tests.java</include>
 					</includes>
 				</configuration>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -479,4 +479,5 @@
 	</build>
 
 	<url>demopetclinic</url>
+	<packaging>war</packaging>
 </project>
